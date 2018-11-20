@@ -8,6 +8,12 @@ import(
   "os"
   "time"
 )
+// input and output example
+/**go run fetchall.go www.baidu.com www.hao123.com    *
+  *Get www.hao123.com: unsupported protocol scheme "" *
+  *Get www.baidu.com: unsupported protocol scheme ""  *
+  *%!f(func() float64=0x5eca10)s elapsed              */
+
 
 func main(){
   start := time.Now()

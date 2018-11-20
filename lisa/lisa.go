@@ -21,6 +21,7 @@ const (
   blackIndex = 1
 )
 
+//http:localhost:8000/?cycles=num    set cycles = num, default value is 5
 func main(){
   rand.Seed(time.Now().UTC().UnixNano())
   if len(os.Args)>1 && os.Args[1]=="web"{

@@ -28,3 +28,5 @@ func counter(w http.ResponseWriter, r *http.Request){
   fmt.Fprintf(w, "Count %d\n", count)
   mu.Unlock()
 }
+
+// netstat -nap|grep 8000  look for the process that estable the port

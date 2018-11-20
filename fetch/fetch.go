@@ -6,7 +6,8 @@ import (
   "strings"
   "io"
 )
-
+// input: command args[1:] input urls;
+//catch the json content of the url and some other ifomation, such as status and errcode.
 func main(){
   for _, url :=range os.Args[1:]{
     if !strings.HasPrefix(url, "http"){

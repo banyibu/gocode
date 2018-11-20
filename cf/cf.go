@@ -4,7 +4,7 @@ import (
   "fmt"
   "os"
   "strconv"
-  "cap2/tempconv"
+  "github.com/banyibu/tempconv"
 )
 
 func main(){

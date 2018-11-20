@@ -24,16 +24,16 @@ func lissaj(){
   rand.Seed(time.Now().UTC().UnixNano())
   if len(os.Args)>1 && os.Args[1]=="web"{
     handler := func(w http.ResponseWriter, r *http.Request){
-      lissajous(w)
+      Lissajous(w)
     }
     http.HandleFunc("/",handler)
     log.Fatal(http.ListenAndServe("localhost:8000",nil))
     return
   }
-  lissajous(os.Stdout)
+  Lissajous(os.Stdout)
 }
 
-func lissajous(out io.Writer){
+func Lissajous(out io.Writer){
   const (
     cycles = 5
     res = 0.001
