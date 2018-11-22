@@ -4,7 +4,7 @@ import (
   "fmt"
   "os"
   "strconv"
-  "github.com/banyibu/gocode/tempconv"
+  "github.com/banyibu/gocode/ch2/tempconv"
 )
 
 func main(){
