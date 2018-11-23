@@ -3,6 +3,7 @@ package main
 import (
   "fmt"
   "math"
+  "log"
 )
 
 const (
@@ -35,14 +36,19 @@ func main(){
 func corner(i,j int)(float64, float64){
   x := xyrange * (float64(i)/cells - 0.5)
   y := xyrange * (float64(j)/cells - 0.5)
-  z := f(x,y)
-
+  z, ok := f(x,y)
+  if !ok{
+    log.Fatalln("z-axis is NaN")
+  }
   sx := width/2 + (x-y)*cos30*xyscale
   sy := height/2 + (x +y)*sin30*xyscale - z*zscale
   return sx,sy
 }
 
-func f(x, y float64) float64{
+func f(x, y float64) (float64,bool){
   r := math.Hypot(x,y)
-  return math.Sin(r)
+  if math.IsNaN(math.Sin(r)){
+    return math.NaN(), false
+  }
+  return math.Sin(r), true
 }
