@@ -1,10 +1,11 @@
+
 package main
 
 import(
 //  "fmt"
   "log"
   "net/http"
-  "github.com/banyibu/gocode/ch1/lissaj"
+  "github.com/banyibu/gocode/ch3/sf"
 )
 
 func main(){
@@ -14,5 +15,8 @@ func main(){
 
 func handler(w http.ResponseWriter, r *http.Request){
   //fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
-  lissaj.Lissajous(w)
+  w.Header().Set("Content-type", "image/svg+xml")
+  sf.SfPrint(w)
 }
+
+//lsof -i:8000  viewing port occupancy
